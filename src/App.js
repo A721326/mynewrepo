@@ -12,10 +12,7 @@ function App() {
              <h1>counter app</h1>
                
                     
-                   <input type="text" value={count} onChange={(e) => setCount(+e.target.value)} placeholder="0" /><br/>
-                   <h2>{count}</h2>
-                 
-                  
+                   
                 
                <div className='row'>
                
