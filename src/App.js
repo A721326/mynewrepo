@@ -1,32 +1,36 @@
 import logo from './logo.svg';
 import './App.css';
-import React, { useState,useEffect } from 'react';
+import React,{useState} from 'react';
+import Button from"./components/Button";
 function App() {
-  const [count, setCount]= useState(0);
-  useEffect(()=>{
-    document.title=`you clicked ${count}`;
-  });
-  return (
-    <div className='container my-5'>
-    <div className='card text-center my-5'>
-    <div className="card-body">
-      <h1> Counter App</h1>
-      <p>  {count} </p>
-      <button className='btn btn-success mx-3' onClick={()=> setCount(count+1)}>
-        Increment
-      </button>
+  const [count, setCount] = useState(0);
+     return (
+     <div className="container">
 
-      
-      <button className='btn btn-secondary mx-3' onClick={()=> setCount(count-1)}>
-        Decrement
-        
+         <div className="main-div">
+           <div className='center-div'>
+             <h1>counter app</h1>
+               
+                    
+                   <input type="text" value={count} onChange={(e) => setCount(+e.target.value)} placeholder="0" /><br/>
+                   <h2>{count}</h2>
+                 
+                  
+                
+               <div className='row'>
+               
+               <button  onClick={()=>setCount(count+1)}>Increase </button>
+               <button onClick={()=>setCount(count-1)}>Decrease </button>
+               <button  onClick={()=>setCount(0)}>reset</button>
+              
+               </div>
+           </div>
+    </div>
+    </div> 
 
-      </button>
-    </div>
-    </div>
-    </div>
+
   );
 }
 
+
 export default App;
-     
